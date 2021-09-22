@@ -10,15 +10,31 @@
             border: 1px solid black;
             text-align: center;
             padding: 10px;
+            align-items: center;
+        }
+        td{
+            border: 1px solid black;
+            width: 25px;
+            height: 25px;
+            margin: 0px;
         }
     </style>
 </head>
 <body class="borde">
     <h1 >JOC DE LA VIDA</h1>
     <H2 >EDUARD SELLAS LLEÓ</H2>
-    <form action="graella.php" method="GET">
-        <label for="">selecciona la grandaria de l'univers <input type="number" name="dimensions"> </label>
-        <button>Enviar</button>
-    </form>
+    <table style="marin:auto;width:100%;">
+    <?php
+    $a = $_GET['dimensions'];
+
+    for($i=0;$i<$a;$i++){
+        echo "<tr>";
+        for($y=0;$y<$a;$y++){
+            echo "<td></td>";
+        }
+        echo "</tr>";
+    }
+    ?>
+    </table>
 </body>
 </html>
