@@ -5,20 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joc de la vida</title>
-    <style>
-        .borde{
-            border: 1px solid black;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+    <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen>
 </head>
-<body class="borde">
-    <h1 >JOC DE LA VIDA</h1>
-    <H2 >EDUARD SELLAS LLEÓ</H2>
-    <form action="graella.php" method="GET">
-        <label for="">selecciona la grandaria de l'univers <input type="number" name="dimensions"> </label>
-        <button>Enviar</button>
-    </form>
+<body>
+    <div class="principal">
+        <h1 >JOC DE LA VIDA</h1>
+       
+        <form action="graella.php" method="GET">
+            <label>Amplada<input type="range" name="d_X" id="d_X" value="24" min="10" max="90" oninput="d_Xo.value = d_X.value">
+                <output name="d_Xo" id="d_Xo">30</output></label><br><br>
+            
+            <label>Altura<input type="range" name="d_Y" id="d_Y" value="24" min="10" max="44" oninput="d_Yo.value = d_Y.value">
+                <output name="d_Yo" id="d_Yo">30</output></label><br><br>
+
+                <button class="seguent">Enviar</button>
+                <a href="inici.html" style="position: absolute; float: left;bottom: 5%;left: 5%;"><button class="anterior">ANTERIOR</button></a>
+        </form>
+        
+    </div>
+
 </body>
 </html>
