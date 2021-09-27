@@ -8,21 +8,21 @@
     <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen>
 </head>
 <body>
-    <div class="principal">
-        <h1 >JOC DE LA VIDA</h1>
+    <fieldset class="principal">
+        <legend><h1 >JOC DE LA VIDA</h1></legend>
        
         <form action="graella.php" method="GET">
             <label>Amplada<input type="range" name="d_X" id="d_X" value="24" min="10" max="90" oninput="d_Xo.value = d_X.value">
                 <output name="d_Xo" id="d_Xo">30</output></label><br><br>
             
-            <label>Altura<input type="range" name="d_Y" id="d_Y" value="24" min="10" max="44" oninput="d_Yo.value = d_Y.value">
+            <label>Altura<input type="range" class="form-label" name="d_Y" id="d_Y" value="24" min="10" max="44" oninput="d_Yo.value = d_Y.value">
                 <output name="d_Yo" id="d_Yo">30</output></label><br><br>
 
                 <button class="seguent">Enviar</button>
                 <a href="inici.html" style="position: absolute; float: left;bottom: 5%;left: 5%;"><button class="anterior">ANTERIOR</button></a>
         </form>
         
-    </div>
+    </fieldset>
 
 </body>
 </html>

@@ -17,7 +17,7 @@
     for($i=0;$i<$y;$i++){
         echo "<br>";
         for($z=0;$z<$x;$z++){
-            echo '<input class="check" type="checkbox" value="0" name="cel[]" /><label></label>';
+            echo '<label><input type="checkbox" name="cel[]" value="'.$i.','.$z.'"/><span></span></label>';
         }
     }
     ?>
