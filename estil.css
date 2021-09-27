@@ -61,4 +61,9 @@ transition-property: background-color;
 h1{
     font-size: 75px;
 }
-
+table{
+    margin: 0 auto;
+}
+tbody{
+    margin-right:0 auto;
+}

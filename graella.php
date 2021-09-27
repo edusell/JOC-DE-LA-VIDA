@@ -1,3 +1,9 @@
+<?PHP 
+  $y = $_GET['d_Y'];
+  $x = $_GET['d_X'];
+setcookie("d_x",$y);
+setcookie("d_y",$x);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
 </head>
 <body class="borde">
     <h1 >JOC DE LA VIDA</h1>
-    <form action="joc.html" method="post">
+    <form action="joc.php" method="post">
     <?php
     $y = $_GET['d_Y'];
     $x = $_GET['d_X'];
