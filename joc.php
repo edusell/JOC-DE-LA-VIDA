@@ -43,6 +43,7 @@ var x = <?=$d_x?>;
 var y = <?=$d_y?>;
 const arr= <?php echo json_encode($check);?>;
 const viu = <?=$arr?>;
+const viu1 = <?=$arr?>;
 const temp =<?=$arr?>;
 
 for(var i=0;i<arr.length;i++){
@@ -51,100 +52,159 @@ for(var i=0;i<arr.length;i++){
     pos[1]=y-1-pos[1];
     viu[pos[0]][pos[1]]=1;
 }
-document.write("hola");
-
-//imprimim la taula amb les cel·lules vives pintades
 for(var i =0;i<x;i++){
-    var table = document.getElementById("tauler");
+        var table = document.getElementById("tauler");
     var row = table.insertRow(0);
     for(var z=0;z<y;z++){
         if(viu[i][z]){
-            pviu();
+            var cell1 = row.insertCell(0);
+    cell1.style.backgroundColor = "white";
+    cell1.innerHTML = "";
         } else{
-            pmort();
+            var cell1 = row.insertCell(0);
+        cell1.innerHTML = "";
         }
     }
-}
-
-//calculem el numero de veins de cada celula
-for(var i =1;i<y;i++){
-    //document.write("</br>");
-    for(var z=1;z<y;z++){
-   // document.write(sum(i,z)+" ");
-    temp[i][z]=sum(i,z);    
     }
-}
-document.write("hola");
-//creem el nou array
-for(var i =1;i<y;i++){
-    document.write("</br>");
+
+
+function imptaula(){
+
+    //borrem el contingut de la taula
+    var table = document.getElementById("tauler");
+    table.innerHTML= "";
+
+    //creem la taula a partir de l'array bidimencional
+    for(var i =0;i<x;i++){
+        var table = document.getElementById("tauler");
+    var row = table.insertRow(0);
+    for(var z=0;z<y;z++){
+        if(viu[i][z]){
+            var cell1 = row.insertCell(0);
+    cell1.style.backgroundColor = "white";
+    cell1.innerHTML = "";
+        } else{
+            var cell1 = row.insertCell(0);
+        cell1.innerHTML = "";
+        }
+    }
+    }
+
+    //calculem el nombre de veins viu de cada cel·la
+    for(var i =0;i<x;i++){
+        //document.write("</br>");
+        for(var z=0;z<=y;z++){
+            temp[i][z]= sum(i,z);
+            //document.write(temp[i][z]);    
+        }
+    }
+
+    //creem el nou array
+    for(var i =0;i<x;i++){
         for(var z=1;z<y;z++){
             if(viu[i][z]==1){
                 if(temp[i][z]<2){
-                    viu[i][z]=0;
-                } else  if(temp[i][z]<3){
-                    viu[i][z]=0;
-                } else  if(temp[i][z]==2 || temp[i][z]==3){
-                    viu[i][z]=1;
-                } else{
-                    viu[i][z]=0;
+                    viu1[i][z]=0;
+                }
+                if(temp[i][z]<3){
+                    viu1[i][z]=0;
+                }
+                if(temp[i][z]==2 || temp[i][z]==3){
+                    viu1[i][z]=1;
                 }
             }else{
                 if(temp[i][z]==3){
-                    viu[i][z]=1;
+                    viu1[i][z]=1;
                 } else {
-                    viu[i][z]=0;
+                    viu1[i][z]=0;
                 }
             }
+        }
+    }
+
+    copiararr();
+    array0()
+    array1();
+}
+function imparr(){
+    for(var i =0;i<x;i++){
+        document.write("</br>");
+        for(var z=0;z<y;z++){
+            document.write(viu[i][z]);    
+        }
     }
 }
-
-//imprimim el nou array
-for(var i =1;i<y;i++){
-    document.write("</br>");
-    for(var z=1;z<y;z++){
-    document.write(viu[i][z]);   
+function copiararr(){
+    for(var i =0;i<x;i++){
+        for(var z=0;z<y;z++){
+            viu[i][z] = viu1[i][z];   
+        }
     }
 }
-
-//var table = document.getElementById("tauler");
-//table.innerHTML= "";
-
-
-
-
-function pviu(x) {
-    var cell1 = row.insertCell(0);
-    cell1.style.backgroundColor = "white";
-    cell1.innerHTML = " ";
+function array0(){
+    for(var i =0;i<x;i++){
+        for(var z=0;z<y;z++){
+            viu1[i][z] =0;   
+        }
+    }
 }
-
-function pmort() {
-
-        var cell1 = row.insertCell(0);
-        cell1.innerHTML = " ";
+function array1(){
+    for(var i =0;i<x;i++){
+        for(var z=0;z<y;z++){
+            temp[i][z] =0;   
+        }
+    }
 }
 function borrartaula(){
     var table = document.getElementById("tauler");
     table.removeChild();
 }
 
-function sum(vx,vy){
-    var sum=0;/*
-    if(vx==0 && vy ==0){
-        sum= viu[vx+1][vy]+viu[vx][vy+1]+viu[vx+1][vy+1];
-    } else if(vx==0){
-        sum==viu[vx][vy-1]+viu[vx+1][vy-1]+viu[vx+1][vy]+viu[vx][vy+1]+viu[vx+1][vy+1];
-    } else if(vy==0){
-        sum= viu[vx-1][vy]+viu[vx+1][vy]+viu[vx-1][vy+1]+viu[vx][vy+1]+viu[vx+1][vy+1];
-    } else if(vx==X && vy==Y){
-        sum= viu[vx-1][vy]+viu[vx-1][vy-1]+viu[vx][vy];
-    }else if(vx==X){
-        sum=viu[][]+viu[][]+viu[][]+viu[][]+viu[][];
-    } else{ */   
-        sum = viu[vx-1][vy-1]+viu[vx][vy-1]+viu[vx+1][vy-1]+viu[vx-1][vy]+viu[vx+1][vy]+viu[vx-1][vy+1]+viu[vx][vy+1]+viu[vx+1][vy+1];
+function sum(row, col) {
+    let count = 0;
+    let nrow=Number(row);
+    let ncol=Number(col);
     
-        return sum;
+        if (nrow - 1 >= 0) {
+        if (viu[nrow - 1][ncol] == 1) 
+            count++;
+    }
+        if (nrow - 1 >= 0 && ncol - 1 >= 0) {
+        if (viu[nrow - 1][ncol - 1] == 1) 
+            count++;
+    }
+        if (nrow - 1 >= 0 && ncol + 1 < y) {
+            if (viu[nrow - 1][ncol + 1] == 1) 
+                count++;
+        }
+    if (ncol - 1 >= 0) {
+        if (viu[nrow][ncol - 1] == 1) 
+            count++;
+    }
+    if (ncol + 1 < y) {
+        if (viu[nrow][ncol+1] == 1) 
+            count++;
+    }
+    if (nrow + 1 < x && ncol - 1 >= 0) {
+        if (viu[nrow + 1][ncol - 1] == 1) 
+            count++;
+    }
+    if (nrow + 1 < x && ncol + 1 < y) {
+        if (viu[nrow + 1][ncol + 1] == 1) 
+            count++;
+    }
+    
+    if (nrow + 1 < x) {
+        if (viu[nrow + 1][ncol] == 1) 
+            count++;
+    }
+    
+    
+    return count;
+}
+
+function boto(){
+    setInterval(function(){imptaula();}, 100);
 }
 </script>
 </html>
