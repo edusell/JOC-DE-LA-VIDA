@@ -11,16 +11,35 @@
     </style>
 </head>
 <body>
-    <h1 >JOC DE LA VIDA</h1>
-    <H2 >EDUARD SELLAS LLEÓ</H2>
+<nav>
+        <ul>
+            <li><a class="active" href="inici.html">JOC DE LA VIDA</a></li>
+            <li><a href="inici.html">INICI</a></li>
+            <li><a href="configuracio.html">JUGA</a></li>
+            <li><a href="#about">PARTIDES GUARDADES</a></li>
+          </ul>
+        </nav>
+
     
     <table id="tauler">
 
     </table>
-    <div class="borde" style="width: 20%;margin: auto;margin-top: 20px;"><button onclick="boto()">PLAY/PAUSE</button></div>
+    <div class="containerboto">
+        <table style="width: 100%;" class="footer">
+            <tr>
+                <td class="none"><div class="boto"> <button class="but" onclick="play()">PLAY</button></div></td>
+                <td class="none"><div class="boto"><button class="but" onclick="pause()">PAUSE</button></div></td>
+               
+            </tr>
+    
+    </table>
+    </div>
+  </div>
+    
 <?php
 $d_x = $_COOKIE['d_x'];
 $d_y = $_COOKIE['d_y'];
+$tmp = $_COOKIE['tmp'] *1000;
 $arr = '[';
 
 for ($i=0;$i<$d_x;$i++){
@@ -45,6 +64,7 @@ const arr= <?php echo json_encode($check);?>;
 const viu = <?=$arr?>;
 const viu1 = <?=$arr?>;
 const temp =<?=$arr?>;
+var idVar=0;
 
 for(var i=0;i<arr.length;i++){
     var pos=arr[i].split(',');
@@ -203,8 +223,14 @@ function sum(row, col) {
     return count;
 }
 
-function boto(){
-    setInterval(function(){imptaula();}, 100);
+function play(){
+    if(idVar==0){
+    idVar = setInterval(function(){imptaula();}, <?=$tmp?>);
+    }
+}
+function pause(){
+    clearInterval(idVar);
+    idVar=0;
 }
 </script>
 </html>

@@ -1,69 +1,141 @@
-body{
-    transition: 1s;
-    text-align: center;
-    padding: 10px;
-    align-items: center;
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
     color: white;
-    background-image: url("img/fons_terra.jpg");
-    transition-duration: 2s;
-    position: relative;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #2134C5;
+  }
+  
+  .active {
+    background-color: #2134C5;
+  }
 
+  body{
+      padding: 0px;
+      margin: 0px;
+      background-color: black;
+      color: white;
+      background-image: url("img/fons_terra.jpg");
+      background-attachment: fixed;
+  }
+  .principal{
+      border: 3px solid white;
+      border-radius: 50px;
+      width: 50%;
+      text-align: center;
+      margin: auto;
+  }
+  legend{
+      margin-left: -25%;
+  }
+  .containerboto{
+      margin: auto;
+      width:100%;
+      text-align: center;
+      margin-top: 50px;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+}
+.boto{
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid white;
+    font-weight: bolder;
+    font-weight: 400;
+    vertical-align: middle;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 5px;
+    transition-duration: 0.5s;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    width: 110px;
+    margin-top: 50px;
+    margin-top: 20px;
+}
+
+.boto:hover{
+    background-color: rgba(255, 255, 255, 0.616);
+    color: black;
+    border: 2px solid black;
+    transition-duration: 0.5s;
+}
+button{
+    border: 0px;
+    background: transparent;
+}
+
+.but{
+    color: white;
+    transition-duration: 0.5s;
+    width: 110px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-weight: 400;
+    font-size: 20px;
+    height: 20px;
+}
+.graella{
+    width: 18.4px;
+    height: 13px;
+    border: 0px solid black;
+    padding: 0px;
+   }
+table{
+    margin: auto;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+table{
+    margin: auto;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin-top: 70px;
+}
+.sep-top{
+    margin: 0px;
+    margin-top: 50px;
+   
+}
+
+input[type="checkbox" i]{
+    margin: 0px;
 }
 td{
     width: 10px;
     height: 10px;
-    border: 1px solid white;
-}
-
-.principal{
-    border: 2px solid white;
-    border-radius: 50px;
-    text-align: center;
-    width: 50%;
-    float: right;
-    height: 650px;
-    margin-top: 50px;
-    margin-right: 50px;
-    position: relative;
-}
-
-.seguent{
-    float: right;
-    bottom: 5%;
-    right: 5%;
-    position: absolute;
-
-}
-.anterior{
-    float: left;
-
-
-}
-form{
-    width: 100%;
-    height: 450px;
-    position: absolute;
-}
-button{
-    background-color: rgba(184, 184, 184,0);
-    width: 100px;
-    height: 70px;
-    border-radius: 50px;
-    color: white;
-    margin: 10px;
-}
-button:hover{
-    background-color: white;
-    color: black;
-    transition-duration: 2s;
-transition-property: background-color;
-}
-h1{
-    font-size: 75px;
-}
-table{
-    margin: 0 auto;
+    border: 1px solid rgb(124, 124, 124);
 }
 tbody{
-    margin-right:0 auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+.none{
+    border: 0px;
+}
+.footer{
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
