@@ -1,0 +1,18 @@
+Etapa 1
+	Planificació del projecte
+	-Portada del joc i accés a la pàgina d’informació i autors
+	Diagrama de casos d’ús
+	-El Git instal·lat 
+	-El repositori local del projecte
+	-Maquetació del prototip en funcionament.
+	Navegació web HTTP a projecte
+
+Etapa 2
+	-Generació dinàmica dels formularis i la interfície del joc.
+	-Crear un repositori a GitHub i vincular el repositori local.
+	-Motor de funcionament bàsic del joc.
+
+Etapa 3
+	Proves de funcionament
+	Generar automàticament la documentació del codi
+	Implementar les correccions
