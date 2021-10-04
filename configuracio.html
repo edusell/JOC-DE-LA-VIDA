@@ -10,10 +10,9 @@
 <body>
     <nav>
         <ul>
-            <li><a class="active" href="inici.html">JOC DE LA VIDA</a></li>
-            <li><a href="inici.html">INICI</a></li>
-            <li><a href="configuracio.html">JUGA</a></li>
-            <li><a href="#about">PARTIDES GUARDADES</a></li>
+            <li><a href="inici.html">JOC DE LA VIDA</a></li>
+            <li><a class="active"  href="configuracio.html">JUGA</a></li>
+            <li><a href="partidaguardada.php">PARTIDES GUARDADES</a></li>
           </ul>
         </nav>
 
@@ -21,26 +20,25 @@
         <legend><h1 >CONFIGURACIÓ</h1></legend>
        
         <form id="myform" action="graella.php" method="GET">
-            <label>Amplada<br><input type="range" name="d_X" id="d_X" value="55" min="10" max="90" oninput="d_Xo.value = d_X.value">
+            <label><h3>AMPLADA </h3><input type="range" name="d_X" id="d_X" value="55" min="10" max="90" oninput="d_Xo.value = d_X.value">
                 <output name="d_Xo" id="d_Xo">55</output></label><br>
             
-            <label>Altura<br><input type="range" class="form-label" name="d_Y" id="d_Y" value="55" min="10" max="90" oninput="d_Yo.value = d_Y.value">
+            <label><h3>ALTURA </h3><input type="range" class="form-label" name="d_Y" id="d_Y" value="55" min="10" max="90" oninput="d_Yo.value = d_Y.value">
                 <output name="d_Yo" id="d_Yo">55</output></label><br><br>
 
-                <label>Inerval de temps entre pantalles: (max:10s) <br><input type="number" name="temps" value="0.1" step="0.01" min="0" max="10">s</label>
+                <label><H3>Inerval de temps entre pantalles: (max:10s) </H3-><br><input type="number" name="temps" value="0.1" step="0.01" min="0" max="10">s</label>
 
         </form>
         
     </fieldset>
-    <div class="containerboto">
         <table class="footer">
             <tr>
                 <td class="none"><div class="boto"><a href="inici.html">ANTERIOR</a></div> </td>
+                <td class="none"></td>
+                <td class="none"></td>
                 <td class="none"> <div class="boto"><button class="but" form="myform">SEGUENT</button></div></td>
-               
             </tr>
     
     </table>
-    </div>
 </body>
 </html>

@@ -1,11 +1,18 @@
 <?PHP 
-  $y = $_GET['d_Y'];
-  $x = $_GET['d_X'];
-  $tmp= $_GET['temps'];
+if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
+    $y = $_GET['d_Y'];
+    $x = $_GET['d_X'];
+    $tmp= $_GET['temps'];
+    
+    setcookie("d_x",$y, time()+86400, "/", "localhost", false, true);
+    setcookie("d_y",$x, time()+86400, "/", "localhost", false, true);
+    setcookie("tmp",$tmp, time()+86400, "/", "localhost", false, true); 
+} else{
+   $x = $_COOKIE["d_x"];
+  $y = $_COOKIE["d_y"];
+@$tmp = $_COOKIE["tmp"];
+}
 
-setcookie("d_x",$y);
-setcookie("d_y",$x);
-setcookie("tmp",$tmp);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,15 +29,13 @@ setcookie("tmp",$tmp);
             <li><a class="active" href="inici.html">JOC DE LA VIDA</a></li>
             <li><a href="inici.html">INICI</a></li>
             <li><a href="configuracio.html">JUGA</a></li>
-            <li><a href="#about">PARTIDES GUARDADES</a></li>
+            <li><a href="partidaguardada.php">PARTIDES GUARDADES</a></li>
           </ul>
         </nav>
 
     <form id="myform" class="sep-top" action="joc.php" method="post">
         <table>
             <?php
-            $y = $_GET['d_Y'];
-            $x = $_GET['d_X'];
 
             for($i=0;$i<$y;$i++){
                 echo "<tr>";
@@ -44,6 +49,15 @@ setcookie("tmp",$tmp);
     <br>
     
     </form>
-    <div class="boto"><button class="but" form="myform">JUGA</button></div>
+    <table class="footer">
+            <tr>
+                <td class="none"><div class="boto"><a href="configuracio.html">ANTERIOR</a></div></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"><div class="boto"><button class="but" form="myform">SEGUENT</button></div></td>
+            </tr>
+    
+    </table>
+    
 </body>
 </html>

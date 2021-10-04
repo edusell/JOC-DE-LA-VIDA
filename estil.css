@@ -14,7 +14,7 @@ ul {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 15px 16px;
     text-decoration: none;
   }
   
@@ -23,7 +23,7 @@ ul {
   }
   
   .active {
-    background-color: #2134C5;
+    background-color: #1b2994;
   }
 
   body{
@@ -32,7 +32,8 @@ ul {
       background-color: black;
       color: white;
       background-image: url("img/fons_terra.jpg");
-      background-attachment: fixed;
+      background-attachment: inherit;
+      background-position: top;
   }
   .principal{
       border: 3px solid white;
@@ -40,6 +41,11 @@ ul {
       width: 50%;
       text-align: center;
       margin: auto;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
   }
   legend{
       margin-left: -25%;
@@ -72,6 +78,7 @@ ul {
     width: 110px;
     margin-top: 50px;
     margin-top: 20px;
+    text-align: center;
 }
 
 .boto:hover{
@@ -132,10 +139,15 @@ tbody{
 }
 .none{
     border: 0px;
+    width: 25%;
 }
 .footer{
     position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
+
+/*TEST*/

@@ -13,9 +13,10 @@
 <body>
 <nav>
         <ul>
-            <li><a href="inici.html">JOC DE LA VIDA</a></li>
-            <li><a class="active" href="configuracio.html">JUGA</a></li>
-            <li><a href="partidaguardada.php">PARTIDES GUARDADES</a></li>
+            <li><a class="active" href="inici.html">JOC DE LA VIDA</a></li>
+            <li><a href="inici.html">INICI</a></li>
+            <li><a href="configuracio.html">JUGA</a></li>
+            <li><a href="#about">PARTIDES GUARDADES</a></li>
           </ul>
         </nav>
 
@@ -34,45 +35,48 @@
     </table>
   
 <?php
-if(!isset($_POST['cel'])){
-    header('Location: graella.php');}
-$d_x = $_COOKIE['d_x'];
-$d_y = $_COOKIE['d_y'];
-@$tmp = $_COOKIE['tmp'] * 1000;
+if(!isset($_GET['partides']) || !isset($_COOKIE[$_GET['partides']])){
+    header('Location: partidaguardada.php');} 
+
+$guarda = $_COOKIE[$_GET['partides']];
+$guarda = ltrim($guarda,'[');
+$guarda = rtrim($guarda,']');
+$arrg = explode(',',$guarda);
+
 
 $arr = '[';
 
-for ($i=0;$i<$d_x;$i++){
+for ($i=0;$i<$arrg[0];$i++){
     $arr=$arr.'[';
-    for ($e=1;$e<$d_y;$e++){
+    for ($e=1;$e<$arrg[1];$e++){
         $arr=$arr.'0,'; 
     }
     $arr=$arr.'0],';
 }
 $arr=$arr.']';
 
-$check= $_POST['cel'];
-//print_r($check);
-//echo json_encode($check);
 ?>
     
 </body>
 <script>
-var x = <?=$d_x?>;
-var y = <?=$d_y?>;
-const arr= <?php echo json_encode($check);?>;
 const viu = <?=$arr?>;
-const viu1 = <?=$arr?>;
-const temp =<?=$arr?>;
+const viu1= <?=$arr?>;
+const temp= <?=$arr?>;
+var x = <?=$arrg[0]?>;
+var y = <?=$arrg[1]?>;
+var tmp=<?=$arrg[2]?>;
+
+const arr= <?php echo json_encode($arrg);?>;
+
 var idVar=0;
     idvar=0;
 
-for(var i=0;i<arr.length;i++){
-    var pos=arr[i].split(',');
-    pos[0]=x-1-pos[0];
-    pos[1]=y-1-pos[1];
-    viu[pos[0]][pos[1]]=1;
-}
+    for(var i=3;i<arr.length;i++){
+        arr[i] = arr[i].slice(1,-1);
+        var pos=arr[i].split('-');
+        viu[pos[0]][pos[1]]=1;
+    }
+
 for(var i =0;i<x;i++){
         var table = document.getElementById("tauler");
     var row = table.insertRow(0);
@@ -144,7 +148,7 @@ function imptaula(){
     }
 
     copiararr();
-    array0();
+    array0()
     array1();
 }
 function imparr(){
@@ -226,7 +230,7 @@ function sum(row, col) {
 
 function play(){
     if(idVar==0){
-    idVar = setInterval(function(){imptaula();}, <?=$tmp?>);
+    idVar = setInterval(function(){imptaula();}, tmp);
     }
 }
 function pause(){
@@ -234,7 +238,7 @@ function pause(){
     idVar=0;
 }
 function guardar(){
-    var guardar=[x,y,<?=$tmp?>];
+    var guardar=[x,y,<?=@$tmp?>];
     for(var i =0;i<x;i++){
         for(var z=0;z<y;z++){
             if(viu[i][z]==1){
