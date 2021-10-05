@@ -1,3 +1,10 @@
+<?php
+if(!isset($_POST['cel'])){
+    header('Location: graella.php');}
+$d_x = $_COOKIE['d_x'];
+$d_y = $_COOKIE['d_y'];
+@$tmp = $_COOKIE['tmp'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +21,10 @@
 <nav>
         <ul>
             <li><a href="inici.html">JOC DE LA VIDA</a></li>
-            <li><a class="active" href="configuracio.html">JUGA</a></li>
+            <li class="active"><a href="configuracio.html">JUGA</a></li>
+            <li class="submenu">DIMENSIONS</li>
+            <li class="submenu ">CÉL·LULES</li>
+            <li class="submenu subactivat">JOC</li>
             <li><a href="partidaguardada.php">PARTIDES GUARDADES</a></li>
           </ul>
         </nav>
@@ -25,20 +35,17 @@
     </table>
     <table class="footer">
             <tr>
-                <td class="none"><div class="boto"><a href="graella.php">ANTERIOR</a></div> </td>
-                <td class="none"><div class="boto"> <button class="but" onclick="play()">PLAY</button></div></td>
-                <td class="none"><div class="boto"><button class="but" onclick="pause()">PAUSE</button></div></td>
-                <td class="none"><div class="boto"><button class="but" onclick="guardar()">GUARDAR</button></div></td>
+                <td class="none"><a href="graella.php"><div class="boto">ANTERIOR</div></a> </td>
+                <td class="none"><button class="but" onclick="play()"><div class="boto">PLAY</div></button></td>
+                <td class="none"><input type="range" id="temps" name="temps" value="0.2" step="0.01" min="0.1" max="2" onchange="temps()"></td>
+                <td class="none"><button class="but" onclick="pause()"><div class="boto">PAUSE</div></button></td>
+                <td class="none"><button class="but" onclick="guardar()"><div class="boto">GUARDAR</div></button></td>
             </tr>
             
     </table>
   
 <?php
-if(!isset($_POST['cel'])){
-    header('Location: graella.php');}
-$d_x = $_COOKIE['d_x'];
-$d_y = $_COOKIE['d_y'];
-@$tmp = $_COOKIE['tmp'] * 1000;
+
 
 $arr = '[';
 
@@ -64,6 +71,7 @@ const arr= <?php echo json_encode($check);?>;
 const viu = <?=$arr?>;
 const viu1 = <?=$arr?>;
 const temp =<?=$arr?>;
+var valor= <?=$tmp?>;
 var idVar=0;
     idvar=0;
 
@@ -181,6 +189,7 @@ function borrartaula(){
     table.removeChild();
 }
 
+
 function sum(row, col) {
     let count = 0;
     let nrow=Number(row);
@@ -223,10 +232,16 @@ function sum(row, col) {
     
     return count;
 }
+function temps(){
+    valor = document.getElementById("temps").value;
+    pause();
+    play();
+    //document.write(valor);
+}
 
 function play(){
     if(idVar==0){
-    idVar = setInterval(function(){imptaula();}, <?=$tmp?>);
+    idVar = setInterval(function(){imptaula();},valor*1000);
     }
 }
 function pause(){

@@ -12,11 +12,13 @@
 </head>
 <body>
 <nav>
-        <ul>
-            <li><a class="active" href="inici.html">JOC DE LA VIDA</a></li>
-            <li><a href="inici.html">INICI</a></li>
-            <li><a href="configuracio.html">JUGA</a></li>
-            <li><a href="#about">PARTIDES GUARDADES</a></li>
+<ul>
+            <li><a href="inici.html">JOC DE LA VIDA</a></li>
+            <li class="active"><a href="configuracio.html">JUGA</a></li>
+            <li class="submenu">DIMENSIONS</li>
+            <li class="submenu ">CÉL·LULES</li>
+            <li class="submenu subactivat">JOC</li>
+            <li><a href="partidaguardada.php">PARTIDES GUARDADES</a></li>
           </ul>
         </nav>
 
@@ -28,6 +30,7 @@
             <tr>
                 <td class="none"><div class="boto"><a href="graella.php">ANTERIOR</a></div> </td>
                 <td class="none"><div class="boto"> <button class="but" onclick="play()">PLAY</button></div></td>
+                <td class="none"><input type="range" id="temps" name="temps" value="0.2" step="0.01" min="0.1" max="1" onchange="temps()"></td>
                 <td class="none"><div class="boto"><button class="but" onclick="pause()">PAUSE</button></div></td>
                 <td class="none"><div class="boto"><button class="but" onclick="guardar()">GUARDAR</button></div></td>
             </tr>

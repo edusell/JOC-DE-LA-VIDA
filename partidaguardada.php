@@ -22,9 +22,9 @@
 <body>
     <nav>
     <ul>
-        <li><a href="#home">JOC DE LA VIDA</a></li>
+        <li><a href="inici.html">JOC DE LA VIDA</a></li>
         <li><a href="configuracio.html">JUGA</a></li>
-        <li><a class="active"  href="partidaguardada.php">PARTIDES GUARDADES</a></li>
+        <li class="active"><a  href="partidaguardada.php">PARTIDES GUARDADES</a></li>
       </ul>
     </nav>
     <fieldset class="principal">
@@ -32,12 +32,12 @@
        
         <form id="myform" action="jocg.php" method="GET">         
                         <?php 
-                        if(count($noms)<4){
+                        if(!isset($noms)){
                             echo '<h2>NO HI HAN PARTIDES GUARDADES</h2>';
                         } else {
-                            echo '<h2>NO HI HAN PARTIDES GUARDADES</h2>';
+                            echo '<h2>SELECCIONI LA PARTIDA QUE VOL CARGAR</h2>';
                             for($i=0;$i<@count($noms);$i++){
-                                echo '<label><input type="radio" id="html" name="fav_language" value="'.$noms[$i].'">'.$noms[$i].'</label>';
+                                echo '<label><input type="radio" id="partides" name="partides" value="'.$noms[$i].'">'.$noms[$i].'</label>';
                                 //echo '<option value="'.$noms[$i].'">';
                             }
                         }
@@ -50,7 +50,8 @@
                 <td class="none"><a href="inici.html"><div class="boto">ANTERIOR</div></a> </td>
                 <td class="none"></td>
                 <td class="none"></td>
-                <td class="none"> <div class="boto"><button class="but" form="myform">SEGUENT</button></div></td>
+                <td class="none"></td>
+                <td class="none"><button class="but" form="myform"> <div class="boto">SEGUENT</div></button></td>
             </tr>
     
     </table>

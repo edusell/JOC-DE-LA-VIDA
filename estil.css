@@ -9,8 +9,16 @@ ul {
   li {
     float: left;
   }
-  
-  li a {
+  nav{
+      height: 50px;
+  }
+  .submenu{
+    background-color: rgb(66, 66, 66);
+  }
+  .subactivat{
+    background-color: #46509b;
+  }
+  li{
     display: block;
     color: white;
     text-align: center;
@@ -18,11 +26,11 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover:not(.active) {
+  li:hover:not(.active) {
     background-color: #2134C5;
   }
   
-  .active {
+  .active{
     background-color: #1b2994;
   }
 
@@ -139,7 +147,7 @@ tbody{
 }
 .none{
     border: 0px;
-    width: 25%;
+    width: 20%;
 }
 .footer{
     position: fixed;

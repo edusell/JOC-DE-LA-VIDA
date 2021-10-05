@@ -25,12 +25,16 @@ if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
 </head>
 <body class="borde">
 <nav>
+<nav>
         <ul>
-            <li><a class="active" href="inici.html">JOC DE LA VIDA</a></li>
-            <li><a href="inici.html">INICI</a></li>
-            <li><a href="configuracio.html">JUGA</a></li>
+            <li><a href="inici.html">JOC DE LA VIDA</a></li>
+            <li class="active"><a href="configuracio.html">JUGA</a></li>
+            <li class="submenu">DIMENSIONS</li>
+            <li class="submenu subactivat">CÉL·LULES</li>
+            <li class="submenu ">JOC</li>
             <li><a href="partidaguardada.php">PARTIDES GUARDADES</a></li>
           </ul>
+        </nav>
         </nav>
 
     <form id="myform" class="sep-top" action="joc.php" method="post">
@@ -51,10 +55,11 @@ if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
     </form>
     <table class="footer">
             <tr>
-                <td class="none"><div class="boto"><a href="configuracio.html">ANTERIOR</a></div></td>
+                <td class="none"><a href="configuracio.html"><div class="boto">ANTERIOR</div></a></td>
                 <td class="none"></td>
                 <td class="none"></td>
-                <td class="none"><div class="boto"><button class="but" form="myform">SEGUENT</button></div></td>
+                <td class="none"></td>
+                <td class="none"><button class="but" form="myform"><div class="boto">SEGUENT</div></button></td>
             </tr>
     
     </table>
