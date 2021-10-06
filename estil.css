@@ -157,5 +157,13 @@ tbody{
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-
+.info{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    margin-top: 49px;
+    text-align: center;
+}
+#temps{width: 100%;}
 /*TEST*/

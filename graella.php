@@ -1,4 +1,6 @@
 <?PHP 
+
+//comprovem si les cookies on enmagatzemo les dimensions estan definides.
 if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
     $y = $_GET['d_Y'];
     $x = $_GET['d_X'];
@@ -7,7 +9,7 @@ if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
     setcookie("d_x",$y, time()+86400, "/", "localhost", false, true);
     setcookie("d_y",$x, time()+86400, "/", "localhost", false, true);
     setcookie("tmp",$tmp, time()+86400, "/", "localhost", false, true); 
-} else{
+} else{//si no ho estan agafo els valors del formolari.
    $x = $_COOKIE["d_x"];
   $y = $_COOKIE["d_y"];
 @$tmp = $_COOKIE["tmp"];
@@ -40,7 +42,7 @@ if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
     <form id="myform" class="sep-top" action="joc.php" method="post">
         <table>
             <?php
-
+            //imprimeixo una taula de checkbox on seleccionare les cel·les vives.
             for($i=0;$i<$y;$i++){
                 echo "<tr>";
                 for($z=0;$z<$x;$z++){

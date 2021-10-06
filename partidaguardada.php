@@ -1,4 +1,5 @@
 <?php
+    //llisto totes les coockies excepte a les que guardo les dimensions i el temps d'execusió
         $i=0;
         if(isset($_COOKIE) && !empty($_COOKIE)){
             foreach($_COOKIE AS $keyName => $valueOfKey){
@@ -31,14 +32,13 @@
         <legend><h1 >PARTIDES GUARDADES</h1></legend>
        
         <form id="myform" action="jocg.php" method="GET">         
-                        <?php 
+                        <?php //comprovo si hi han partides guardades
                         if(!isset($noms)){
                             echo '<h2>NO HI HAN PARTIDES GUARDADES</h2>';
-                        } else {
+                        } else {// llisto les partides guardades en un formolari que enviara el nom de la partida guardada per get a la pagina jog.php
                             echo '<h2>SELECCIONI LA PARTIDA QUE VOL CARGAR</h2>';
                             for($i=0;$i<@count($noms);$i++){
-                                echo '<label><input type="radio" id="partides" name="partides" value="'.$noms[$i].'">'.$noms[$i].'</label>';
-                                //echo '<option value="'.$noms[$i].'">';
+                                echo '<label><input type="radio" id="partides" name="partides" value="'.$noms[$i].'">'.$noms[$i].'</label><br>';
                             }
                         }
                         
