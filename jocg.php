@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joc de la vida</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
     <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen>
+    <title>JOC DE LA VIDA</title>
     <style>
 
     </style>

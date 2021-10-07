@@ -6,9 +6,9 @@ if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
     $x = $_GET['d_X'];
     $tmp= $_GET['temps'];
     
-    setcookie("d_x",$y, time()+86400, "/", "localhost", false, true);
-    setcookie("d_y",$x, time()+86400, "/", "localhost", false, true);
-    setcookie("tmp",$tmp, time()+86400, "/", "localhost", false, true); 
+    setcookie("d_x",$y, time()+86400, "/", "", false, true);
+    setcookie("d_y",$x, time()+86400, "/", "", false, true);
+    setcookie("tmp",$tmp, time()+86400, "/", "", false, true); 
 } else{//si no ho estan agafo els valors del formolari.
    $x = $_COOKIE["d_x"];
   $y = $_COOKIE["d_y"];
@@ -22,8 +22,9 @@ if(isset($_GET['d_Y'],$_GET['d_X'],$_GET['temps'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joc de la vida</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
     <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen>
+    <title>JOC DE LA VIDA</title>
 </head>
 <body class="borde">
 <nav>

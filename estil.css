@@ -5,12 +5,16 @@ ul {
     overflow: hidden;
     background-color: #333;
   }
-  
+
   li {
     float: left;
   }
   nav{
       height: 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
   }
   .submenu{
     background-color: rgb(66, 66, 66);
@@ -36,6 +40,8 @@ ul {
 
   body{
       padding: 0px;
+      padding-top: 50px;
+      padding-bottom: 75px;
       margin: 0px;
       background-color: black;
       color: white;
@@ -165,5 +171,5 @@ tbody{
     margin-top: 49px;
     text-align: center;
 }
-#temps{width: 100%;}
+#temps{width: 110px;}
 /*TEST*/

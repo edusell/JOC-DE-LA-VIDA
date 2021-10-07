@@ -19,8 +19,9 @@ $d_y = $_COOKIE['d_y'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joc de la vida</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
     <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen>
+    <title>JOC DE LA VIDA</title>
     <style>
 
     </style>
@@ -57,17 +58,8 @@ $d_y = $_COOKIE['d_y'];
   
 <?php
 
-//creo un array bidimencional  per js amb les dimensions del joc
-$arr = '[';
+include 'creararray.php';
 
-for ($i=0;$i<$d_x;$i++){
-    $arr=$arr.'[';
-    for ($e=1;$e<$d_y;$e++){
-        $arr=$arr.'0,'; 
-    }
-    $arr=$arr.'0],';
-}
-$arr=$arr.']';
 
 $check= $_POST['cel'];
 //print_r($check);
