@@ -82,8 +82,8 @@ const arr= <?php echo json_encode($arrg);?>;
 var idVar=0;
 
 var cicles=0;
-var vives=arr.length;
-var mortes=x*y-vives;
+var vives=arr.length-3;
+var mortes=x*(y-2)-vives;
 
     //marcot les posicions amb cel·lules vives
     for(var i=3;i<arr.length;i++){
@@ -96,7 +96,7 @@ var mortes=x*y-vives;
 for(var i =0;i<x;i++){
         var table = document.getElementById("tauler");
     var row = table.insertRow(0);
-    for(var z=0;z<y;z++){
+    for(var z=1;z<y-1;z++){
         if(viu[i][z]){
             var cell1 = row.insertCell(0);
     cell1.style.backgroundColor = "white";
@@ -141,7 +141,7 @@ function imptaula(){
     for(var i =0;i<x;i++){
         var table = document.getElementById("tauler");
         var row = table.insertRow(0);
-        for(var z=0;z<y;z++){
+        for(var z=1;z<y-1;z++){
             if(viu[i][z]){
                 var cell1 = row.insertCell(0);
                 cell1.style.backgroundColor = "white";

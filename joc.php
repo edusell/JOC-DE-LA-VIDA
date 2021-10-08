@@ -12,6 +12,7 @@ $d_x = $_COOKIE['d_x'];
 $d_y = $_COOKIE['d_y'];
 @$tmp = $_COOKIE['tmp'];
 
+$d_y= $d_y +2;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,21 +84,21 @@ var idVar=0;
 
 var cicles=0;
 var vives=arr.length;
-var mortes=x*y-vives;
+var mortes=x*(y-2)-vives;
 
 //marco les posicions vives dins de l'arrai bidimencional
 for(var i=0;i<arr.length;i++){
     var pos=arr[i].split(',');
     pos[0]=x-1-pos[0];
     pos[1]=y-1-pos[1];
-    viu[pos[0]][pos[1]]=1;
+    viu[pos[0]][pos[1]-1]=1;
 }
 
 //imprimeixo el tauler amb la configuració inicial
 for(var i =0;i<x;i++){
         var table = document.getElementById("tauler");
         var row = table.insertRow(0);
-    for(var z=0;z<y;z++){
+    for(var z=1;z<y-1;z++){
         if(viu[i][z]){
             var cell1 = row.insertCell(0);
     cell1.style.backgroundColor = "white";
@@ -141,7 +142,7 @@ function imptaula(){
     for(var i =0;i<x;i++){
         var table = document.getElementById("tauler");
         var row = table.insertRow(0);
-        for(var z=0;z<y;z++){
+        for(var z=1;z<y-1;z++){
             if(viu[i][z]){
                 var cell1 = row.insertCell(0);
                 cell1.style.backgroundColor = "white";
